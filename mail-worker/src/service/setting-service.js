@@ -49,7 +49,7 @@ const settingService = {
 
 
 		let linuxdoSwitch = c.env.linuxdo_switch;
-		let githubIcon = c.env.github_icon;
+		let projectLink = c.env.project_link;
 
 		if (typeof linuxdoSwitch === 'string' && linuxdoSwitch === 'true') {
 			linuxdoSwitch = true
@@ -59,15 +59,17 @@ const settingService = {
 			linuxdoSwitch = false
 		}
 
-		if (typeof githubIcon === 'string' && githubIcon === 'false') {
-			githubIcon = false
-		} else if (githubIcon === false) {
-			githubIcon = false
+		console.log(projectLink)
+
+		if (typeof projectLink === 'string' && projectLink === 'false') {
+			projectLink = false
+		} else if (projectLink === false) {
+			projectLink = false
 		} else {
-			githubIcon = true
+			projectLink = true
 		}
 
-		setting.githubIcon = githubIcon;
+		setting.projectLink = projectLink;
 
 		setting.linuxdoClientId = c.env.linuxdo_client_id;
 		setting.linuxdoCallbackUrl = c.env.linuxdo_callback_url;
@@ -216,7 +218,7 @@ const settingService = {
 			linuxdoCallbackUrl: settingRow.linuxdoCallbackUrl,
 			linuxdoSwitch: settingRow.linuxdoSwitch,
 			minEmailPrefix: settingRow.minEmailPrefix,
-			githubIcon: settingRow.githubIcon
+			projectLink: settingRow.projectLink
 		};
 	}
 };
